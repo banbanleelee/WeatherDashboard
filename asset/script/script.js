@@ -115,6 +115,7 @@ function getApi(city) {
             getForecast(data.coord.lat, data.coord.lon);
             saveSearch();
             displaySearch();
+            clearInput();
         })
 }
 
@@ -150,21 +151,23 @@ function getWeatherIcon(weather) {
 
 //save the search history to local storage and store to an array 
 function saveSearch() {
-    var searches = {
-        city: $('#search-input:input').val()
-    };
-    localStorage.setItem('city', JSON.stringify(searches));
-    var cityArr = [];
-    cityArr.push(searches);
-    cityArr = cityArr.concat(JSON.parse(localStorage.getItem('cityArr')||'[]'));
-    localStorage.setItem('cityArr', JSON.stringify(cityArr));
+    if ($('#search-input:input').val()!=="") {
+        var searches = {
+            city: $('#search-input:input').val()
+        };
+        localStorage.setItem('city', JSON.stringify(searches));
+        var cityArr = [];
+        cityArr.push(searches);
+        cityArr = cityArr.concat(JSON.parse(localStorage.getItem('cityArr') ||"[]"));
+        localStorage.setItem('cityArr', JSON.stringify(cityArr));
+    } 
 }
 
 //display the saved searches from the local storage by parsing
 function displaySearch() {
     $('#history-container').empty();
     var search = JSON.parse(localStorage.getItem('cityArr'));
-    if (search!==null) {
+    if (search!==null && $('#search-input')!=="") {
         for (var i=0; i<search.length; i++) {
             var city = $('<button></button>')
                 .text(search[i].city)
@@ -175,7 +178,11 @@ function displaySearch() {
         }
     }
 }
-            
+      
+function clearInput() {
+    $('#search-input').val("");
+}
+
 //show searched cities based on locally stored data
 displaySearch();
 
