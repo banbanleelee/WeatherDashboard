@@ -11,7 +11,10 @@ AS A traveler
 I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 ```
-
+## User Story
+```md
+Technology used: HTML, CSS, JavaScript, jQuery,  Bootstrap, FontAwesome
+```
 ## Review
 
 ```md
@@ -49,8 +52,8 @@ THEN I am again presented with current and future conditions for that city
 ```
 ![](./asset/images/demo6.PNG)
 
-## link
+## links
 
-https://github.com/banbanleelee/WeatherDashboard
+GitHub Repository: https://github.com/banbanleelee/WeatherDashboard
 
-https://banbanleelee.github.io/WeatherDashboard/
+Deployed Page: https://banbanleelee.github.io/WeatherDashboard/
