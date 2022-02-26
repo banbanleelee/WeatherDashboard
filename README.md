@@ -11,9 +11,9 @@ AS A traveler
 I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 ```
-## User Story
+## Technology Used
 ```md
-Technology used: HTML, CSS, JavaScript, jQuery,  Bootstrap, FontAwesome
+HTML, CSS, JavaScript, jQuery,  Bootstrap, FontAwesome
 ```
 ## Review
 
